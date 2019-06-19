@@ -7,7 +7,7 @@
 
 #define TASK_NUM 4 //initialize 3 tasks
 #define PSTACK_SIZE_WORDS 1024 //user stack size = 4 kB (each word is 4 bytes)
-# define DELAY_TIME 100 //Delay 100 ms
+# define DELAY_TIME 30 //Delay 100 ms
 
 static uint32_t *psp_array[TASK_NUM]; //儲存指標的array
 
@@ -97,6 +97,8 @@ void task3(void){
 		if (fiboLong<=UNSIGN_INT_MAX){ //UNSIGN_INT_MAX
 			//Unsign interger max
 			printf("Fibo==%d\r\n",(unsigned int)fiboLong); //convert back to int
+			for(int j=0;j<10000;j++) //delay for a while
+		;
 		}
 		else{	
 			i=0;
@@ -105,8 +107,7 @@ void task3(void){
 		n_tmp=n_2;
 		n_1=n_tmp;
 		n_2=(unsigned int)fiboLong;
-		for(int j=0;j<100000;j++) //delay for a while
-		;
+
 
 	}
 
